@@ -12,11 +12,14 @@ time.sleep(3)
 
 #<textarea class="gLFyf" jsaction="paste:puy29d;" id="APjFqb" maxlength="2048" name="q" rows="1" aria-activedescendant="" aria-autocomplete="both" aria-controls="Alh6id" aria-expanded="false" aria-haspopup="both" aria-owns="Alh6id" autocapitalize="off" autocomplete="off" autocorrect="off" autofocus="" role="combobox" spellcheck="false" title="검색" type="search" value="" aria-label="검색" data-ved="0ahUKEwiN1oGW9oGEAxU0nq8BHYCKAqkQ39UDCA4"></textarea>
 #검색어창 찾기
-searchBox = driver.find_element(By.CLASS_NAME, "gLFyf")
+# searchBox = driver.find_element(By.CLASS_NAME, "gLFyf")
 #XPath를 사용하는 경우
-#//*[@id="APjFqb"]
-#searchBox = driver.find_element(By.XPATH,"//*[@id='APjFqb']")
+#//*[@id="APjFqb"] 전체모든 태그에서 id 속성이 APjFqb인것을 찾아라
+searchBox = driver.find_element(By.XPATH,"//*[@id='APjFqb']")
 
 searchBox.send_keys("맥북")
-searchBox.send_keys(Keys.RETURN)
-time.sleep(5)
+searchBox.send_keys(Keys.RETURN) # 엔터키
+time.sleep(10)
+
+while True:
+    pass
