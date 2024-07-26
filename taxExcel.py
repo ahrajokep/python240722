@@ -9,7 +9,7 @@ import pandas as pd
 import numpy as np
 
 #디자인 파일을 로딩
-form_class = uic.loadUiType(r"C:\Work\재무자재부_지방세납부\taxExcel.ui")[0]
+form_class = uic.loadUiType(r"C:\Work2\taxExcel.ui")[0]
 
 class Window(QMainWindow, form_class):
     def __init__(self):
@@ -18,7 +18,7 @@ class Window(QMainWindow, form_class):
         self.filename = ""
         self.downloadFolder = ""
         self.radioBtn = 0 
-        self.setupUi(self)
+        # self.setupUi(self)
       
     def findExcel(self):
         #입력 파라메터 처리 
