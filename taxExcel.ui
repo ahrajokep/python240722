@@ -52,7 +52,7 @@
      <string>파일찾기</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTextBrowser" name="textBrowser_upload">
     <property name="geometry">
      <rect>
       <x>70</x>
@@ -62,65 +62,10 @@
      </rect>
     </property>
    </widget>
-   <widget class="QWidget" name="horizontalLayoutWidget">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>240</y>
-      <width>641</width>
-      <height>51</height>
-     </rect>
-    </property>
-    <layout class="QHBoxLayout" name="horizontalLayout">
-     <item>
-      <widget class="QRadioButton" name="radioButton_2">
-       <property name="text">
-        <string>재산세(건축물)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton">
-       <property name="text">
-        <string>재산세(주택)</string>
-       </property>
-      </widget>
-     </item>
-     <item>
-      <widget class="QRadioButton" name="radioButton_3">
-       <property name="text">
-        <string>재산세(토지)</string>
-       </property>
-      </widget>
-     </item>
-    </layout>
-   </widget>
-   <widget class="QLabel" name="label">
-    <property name="geometry">
-     <rect>
-      <x>70</x>
-      <y>210</y>
-      <width>211</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <family>맑은 고딕</family>
-      <pointsize>14</pointsize>
-      <weight>50</weight>
-      <bold>false</bold>
-      <underline>false</underline>
-     </font>
-    </property>
-    <property name="text">
-     <string>납부자료 종류</string>
-    </property>
-   </widget>
    <widget class="QPushButton" name="actButton">
     <property name="geometry">
      <rect>
-      <x>340</x>
+      <x>330</x>
       <y>410</y>
       <width>111</width>
       <height>41</height>
@@ -136,11 +81,11 @@
      <string>실 행</string>
     </property>
    </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
+   <widget class="QTextBrowser" name="textBrowser_download">
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>340</y>
+      <y>240</y>
       <width>511</width>
       <height>41</height>
      </rect>
@@ -150,8 +95,8 @@
     <property name="geometry">
      <rect>
       <x>70</x>
-      <y>310</y>
-      <width>211</width>
+      <y>210</y>
+      <width>261</width>
       <height>31</height>
      </rect>
     </property>
@@ -165,7 +110,7 @@
      </font>
     </property>
     <property name="text">
-     <string>결과파일 저장경로</string>
+     <string>결과파일 저장경로 지정</string>
     </property>
    </widget>
    <widget class="QLabel" name="label_3">
@@ -173,7 +118,7 @@
      <rect>
       <x>70</x>
       <y>110</y>
-      <width>211</width>
+      <width>231</width>
       <height>31</height>
      </rect>
     </property>
@@ -187,14 +132,14 @@
      </font>
     </property>
     <property name="text">
-     <string>전체파일 Upload</string>
+     <string>납부전체자료 Upload</string>
     </property>
    </widget>
    <widget class="QPushButton" name="findButton_2">
     <property name="geometry">
      <rect>
       <x>590</x>
-      <y>340</y>
+      <y>240</y>
       <width>111</width>
       <height>41</height>
      </rect>
@@ -207,6 +152,63 @@
     </property>
     <property name="text">
      <string>경로찾기</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_4">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>310</y>
+      <width>631</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>11</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>세금조건 : 재산세(건축물), 재산세(토지), 재산세(주택)</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_5">
+    <property name="geometry">
+     <rect>
+      <x>70</x>
+      <y>350</y>
+      <width>631</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <family>맑은 고딕</family>
+      <pointsize>11</pointsize>
+      <weight>50</weight>
+      <bold>false</bold>
+      <underline>false</underline>
+     </font>
+    </property>
+    <property name="text">
+     <string>지역조건 : 과천시, .. (30개)</string>
+    </property>
+   </widget>
+   <widget class="QProgressBar" name="progressBar">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>480</y>
+      <width>791</width>
+      <height>23</height>
+     </rect>
+    </property>
+    <property name="value">
+     <number>24</number>
     </property>
    </widget>
   </widget>
@@ -228,7 +230,7 @@
    <sender>findButton</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>findExcel()</slot>
+   <slot>openFileNameDialog()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>651</x>
@@ -244,11 +246,11 @@
    <sender>findButton_2</sender>
    <signal>clicked()</signal>
    <receiver>MainWindow</receiver>
-   <slot>makeDownloadFolder()</slot>
+   <slot>saveFileDialog()</slot>
    <hints>
     <hint type="sourcelabel">
      <x>645</x>
-     <y>377</y>
+     <y>303</y>
     </hint>
     <hint type="destinationlabel">
      <x>674</x>
@@ -272,61 +274,10 @@
     </hint>
    </hints>
   </connection>
-  <connection>
-   <sender>radioButton_2</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>buildingTaxSelect()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>99</x>
-     <y>297</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>139</x>
-     <y>315</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radioButton</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>houseTaxSelect()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>361</x>
-     <y>291</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>393</x>
-     <y>320</y>
-    </hint>
-   </hints>
-  </connection>
-  <connection>
-   <sender>radioButton_3</sender>
-   <signal>clicked()</signal>
-   <receiver>MainWindow</receiver>
-   <slot>landTaxSelect()</slot>
-   <hints>
-    <hint type="sourcelabel">
-     <x>553</x>
-     <y>288</y>
-    </hint>
-    <hint type="destinationlabel">
-     <x>583</x>
-     <y>319</y>
-    </hint>
-   </hints>
-  </connection>
  </connections>
  <slots>
-  <slot>findExcel()</slot>
-  <slot>makeDownloadFolder()</slot>
+  <slot>openFileNameDialog()</slot>
+  <slot>saveFileDialog()</slot>
   <slot>mainFunction()</slot>
-  <slot>buildingTaxSelect()</slot>
-  <slot>houseTaxSelect()</slot>
-  <slot>landTaxSelect()</slot>
  </slots>
 </ui>

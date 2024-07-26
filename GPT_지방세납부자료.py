@@ -29,7 +29,7 @@ class ExcelConverter(QWidget):
         layout.addWidget(self.savePathLabel)
 
         self.makeButton = QPushButton('실행', self)
-        # self.makeButton.clicked.connect(self.makeExcelfile)
+        self.makeButton.clicked.connect(self.makeExcelfile)
         layout.addWidget(self.makeButton)
 
         self.savePathLabel = QLabel('저장될 폴더 경로가 지정되지 않았습니다.', self)
