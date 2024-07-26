@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 
-df = pd.read_excel('납부대상확인.xlsx')
+df = pd.read_excel(f"c:\work2\납부대상확인.xlsx")
 # df.head(2)
+df['전자납부번호'] = df['전자납부번호'].astype(str)
 
 cond1 = df['세입구분'] == '지방세'
 # 세입구분:지방세 선택
